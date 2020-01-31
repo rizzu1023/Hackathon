@@ -45,8 +45,8 @@
                                     <td>{{ $schedule->date }}</td>
                                     <td>{{ $schedule->time }}</td>
                                     <td>{{ $schedule->event_id }}</td>
-                                    <td>{{ $schedule->team1 }}</td>
-                                    <td>{{ $schedule->team2 }}</td>
+                                    <td>{{ $schedule->team1_id }}</td>
+                                    <td>{{ $schedule->team2_id }}</td>
                                     <td>{{ $schedule->status }}</td>
                                     <td>{{ $schedule->winner }}</td>
                                     <td>
