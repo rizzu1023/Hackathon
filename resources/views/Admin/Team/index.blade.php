@@ -29,9 +29,9 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Team Name</th>
-                                <th>State</th>
-                                <th>Member</th>
+                                <th>Year</th>
+                                <th>Department</th>
+                                <th>Shift</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -39,13 +39,13 @@
                             @foreach($teams as $team)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $team->name }}</td>
+                                    <td>{{ $team->year }}</td>
                                     <td>{{ $team->department }}</td>
                                     <td>{{ $team->shift }}</td>
                                     <td>
                                         <a class="btn btn-sm btn-square btn-primary" href="/admin/team/{{ $team->id }}">Detail</a>
-                                        <a class="btn btn-sm btn-square btn-warning"
-                                           href="/admin/team/{{ $team->id }}/edit">Edit</a>
+{{--                                        <a class="btn btn-sm btn-square btn-warning"--}}
+{{--                                           href="/admin/team/{{ $team->id }}/edit">Edit</a>--}}
                                         <form method="post" action="/admin/team/{{$team->id}}"
                                               style="display: inline-block">
                                             @csrf
@@ -57,29 +57,9 @@
                                 </tr>
                             @endforeach
 
-
                             </tbody>
                         </table>
-                        {{--                        <ul class="pagination">--}}
-                        {{--                            <li class="page-item">--}}
-                        {{--                                <a class="page-link" href="#">Prev</a>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="page-item active">--}}
-                        {{--                                <a class="page-link" href="#">1</a>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="page-item">--}}
-                        {{--                                <a class="page-link" href="#">2</a>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="page-item">--}}
-                        {{--                                <a class="page-link" href="#">3</a>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="page-item">--}}
-                        {{--                                <a class="page-link" href="#">4</a>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="page-item">--}}
-                        {{--                                <a class="page-link" href="#">Next</a>--}}
-                        {{--                            </li>--}}
-                        {{--                        </ul>--}}
+
                     </div>
                 </div>
             </div>

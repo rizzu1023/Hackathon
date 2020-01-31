@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class TeamController extends Controller
 {
@@ -15,7 +16,6 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
-        return $teams;
         return view('Admin.Team.index',compact('teams'));
     }
 
@@ -26,18 +26,23 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Team.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        Team::Create([
+            'year' => $request->year,
+            'department' => $request->department,
+            'shift' => $request->shift,
+    ]);
+        return redirect::route('team.index')->with('message', 'Team Added');
     }
 
     /**
@@ -59,7 +64,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+//        return view('Admin.Team.edit',compact('team'));
     }
 
     /**
@@ -71,17 +76,18 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        $team->update($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Team  $team
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Team $team)
     {
-        //
+        $team->delete();
+        return redirect::route('team.index')->with('message','Team Deleted');
     }
 }

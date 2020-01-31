@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->bigIncrements('id');
             $table->string('year');
             $table->string('department');
-            $table->string('shift');
+            $table->string('shift')->nullable();
             $table->timestamps();
         });
     }
