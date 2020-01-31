@@ -7,18 +7,18 @@
                 <a class="nav-link" href="/admin/dashboard">
                     <i class="nav-icon icon-drop"></i> Dashboard</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/event">
+                    <i class="nav-icon icon-drop"></i> Event</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/team">
                     <i class="nav-icon icon-drop"></i> Teams</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-drop"></i> Stats</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-drop"></i> Workshops</a>
+                <a class="nav-link" href="/admin/schedule">
+                    <i class="nav-icon icon-drop"></i> Schedule</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">

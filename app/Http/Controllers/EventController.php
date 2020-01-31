@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class EventController extends Controller
 {
@@ -14,7 +15,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::all();
+        return view('Admin.Event.index', compact('events'));
     }
 
     /**
@@ -24,18 +26,25 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Event.create');
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $event = Event::create([
+            'name' => $request->name,
+            'category' => $request->category,
+            'venue' => $request->venue,
+        ]);
+
+        return redirect::route('event.index')->with('message','Event has been Successfully Added');
     }
 
     /**
@@ -46,7 +55,8 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('Admin.Event.show',compact('event'));
+
     }
 
     /**
@@ -80,6 +90,7 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return redirect::route('event.index')->with('message','Successfully Deleted');
     }
 }
