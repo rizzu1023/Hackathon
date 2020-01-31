@@ -18,6 +18,7 @@ class CreatePlayersTable extends Migration
             $table->string('name');
             $table->bigInteger('mobile_no');
             $table->integer('team_id');
+            $table->integer('event_id');
             $table->timestamps();
         });
     }

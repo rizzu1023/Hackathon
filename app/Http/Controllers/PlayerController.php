@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PlayerController extends Controller
 {
@@ -14,7 +15,8 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+        return view('Admin.Players.index',compact('players'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Players.create');
     }
 
     /**
@@ -35,8 +37,16 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Player::Create([
+            'name' => $request->name,
+            'mobile_no' => $request->mobile_no,
+            'team_id' => $request->team_id,
+            'event_id' => $request->event_id,
+        ]);
+
+            return redirect::route('player.index')->with('message', 'Player Added');
     }
+    
 
     /**
      * Display the specified resource.
@@ -80,6 +90,7 @@ class PlayerController extends Controller
      */
     public function destroy(Player $player)
     {
-        //
+        $player->delete();
+        return redirect::route('player.index')->with('message','Player Deleted');
     }
 }

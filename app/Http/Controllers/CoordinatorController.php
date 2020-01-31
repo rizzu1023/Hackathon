@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Coordinator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class CoordinatorController extends Controller
 {
@@ -14,7 +15,8 @@ class CoordinatorController extends Controller
      */
     public function index()
     {
-        //
+        $coordinators = Coordinator::all();
+        return view('Admin.Coordinator.index',compact('coordinators'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CoordinatorController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Coordinator.create');
     }
 
     /**
@@ -35,7 +37,13 @@ class CoordinatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Coordinator::Create([
+            'name' => $request->name,
+            'number' => $request->number,
+            'category' => $request->category,
+            'event_id' => $request->event_id,
+    ]);
+        return redirect::route('Corordinator.index')->with('message', 'Coordinator Added');
     }
 
     /**
@@ -80,6 +88,7 @@ class CoordinatorController extends Controller
      */
     public function destroy(Coordinator $coordinator)
     {
-        //
+        $coordinator->delete();
+        return redirect::route('Coordinator.index')->with('message','Coordinator Deleted');
     }
 }

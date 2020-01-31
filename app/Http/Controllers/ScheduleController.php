@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Schedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ScheduleController extends Controller
 {
@@ -14,7 +15,8 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        //
+        $schedules = Schedule::all();
+        return view('Admin.Schedule.index',compact('schedules'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ScheduleController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Schedule.create');
     }
 
     /**
@@ -35,7 +37,16 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Schedule::Create([
+            'date' => $request->date,
+            'time' => $request->time,
+            'event_id' => $request->event_id,
+            'team1_id' => $request->team1_id,
+            'team2_id' => $request->team2_id,
+            'status' => $request->status,
+            'winner' => $request->winner,
+    ]);
+        return redirect::route('Schedule.index')->with('message', 'Schedule Added');
     }
 
     /**
@@ -80,6 +91,7 @@ class ScheduleController extends Controller
      */
     public function destroy(Schedule $schedule)
     {
-        //
+        $schedule->delete();
+        return redirect::route('Schedule.index')->with('message','Schedule Deleted');
     }
 }
