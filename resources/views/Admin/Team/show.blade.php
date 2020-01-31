@@ -28,25 +28,22 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i>{{ $team['team_name']}} ({{ $team['team_state']}})
-                        <span style="float: right">{{ $team->Event->title }}</span>
+                        <i class="fa fa-align-justify"></i>{{ $team['year']}} ({{ $team['department']}})
+                        <span style="float: right">{{ $team->Event->name }}</span>
                     </div>
                     <div class="card-body">
                         <table class="table table-responsive-sm table-bordered">
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Gmail</th>
-                                <th>Mobile</th>
-                                <th>College</th>
-                                <th>Dept</th>
-                                <th>Github</th>
+                                <th>year</th>
+                                <th>Department</th>
+                                <th>Shift</th>
+                                
 
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($team->Participant as $p)
                             <tr>
                                     <td>1</td>
                                     <td>{{$p->name}}</td>

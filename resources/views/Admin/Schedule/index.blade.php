@@ -12,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i>Teams
+                        <i class="fa fa-align-justify"></i>Schedule
                         <a class="btn btn-sm btn-primary" href="/admin/schedule/create" style="float: right">Add Schedele</a>
 
                     </div>
@@ -43,9 +43,8 @@
                                     <td>{{ $schedule->status }}</td>
                                     <td>{{ $schedule->winner }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-square btn-primary" href="/admin/schedule/{{ $schedule->id }}">Detail</a>
-                                        <a class="btn btn-sm btn-square btn-warning"
-                                           href="/admin/schedule/{{ $schedule->id }}/edit">Edit</a>
+                                        {{-- <a class="btn btn-sm btn-square btn-primary" href="/admin/schedule/{{ $schedule->id }}">Detail</a> --}}
+                                        
                                         <form method="post" action="/admin/schedule/{{$schedule->id}}"
                                               style="display: inline-block">
                                             @csrf

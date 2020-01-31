@@ -24,6 +24,7 @@
                                 <th>Number</th>
                                 <th>Category</th>
                                 <th>Event ID</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>

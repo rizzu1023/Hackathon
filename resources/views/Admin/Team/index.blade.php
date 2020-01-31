@@ -43,7 +43,7 @@
                                     <td>{{ $team->department }}</td>
                                     <td>{{ $team->shift }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-square btn-primary" href="/admin/team/{{ $team->id }}">Detail</a>
+                                        {{-- <a class="btn btn-sm btn-square btn-primary" href="/admin/team/{{ $team->id }}">Detail</a> --}}
 {{--                                        <a class="btn btn-sm btn-square btn-warning"--}}
 {{--                                           href="/admin/team/{{ $team->id }}/edit">Edit</a>--}}
                                         <form method="post" action="/admin/team/{{$team->id}}"

@@ -33,7 +33,7 @@
                                     <td>{{ $event->category }}</td>
                                     <td>{{ $event->venue }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-square btn-primary" href="/admin/event/{{$event->id}}">Detail</a>
+                                        {{-- <a class="btn btn-sm btn-square btn-primary" href="/admin/event/{{$event->id}}">Detail</a> --}}
 {{--                                        <a class="btn btn-sm btn-square btn-warning"--}}
 {{--                                           href="/admin/event/{{$event->id}}/edit">Edit</a>--}}
                                         <form method="post" action="/admin/event/{{ $event->id }}"
