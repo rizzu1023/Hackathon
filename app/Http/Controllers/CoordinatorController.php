@@ -45,7 +45,7 @@ class CoordinatorController extends Controller
             'category' => $request->category,
             'event_id' => $request->event_id,
     ]);
-        return redirect::route('Corordinator.index')->with('message', 'Coordinator Added');
+        return redirect::route('coordinator.index')->with('message', 'Coordinator Added');
     }
 
     /**
@@ -91,6 +91,6 @@ class CoordinatorController extends Controller
     public function destroy(Coordinator $coordinator)
     {
         $coordinator->delete();
-        return redirect::route('Coordinator.index')->with('message','Coordinator Deleted');
+        return redirect::route('coordinator.index')->with('message','Coordinator Deleted');
     }
 }

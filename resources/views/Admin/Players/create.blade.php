@@ -46,12 +46,12 @@
                                     <select class="form-control" id="duration" name="event_id">
                                         <option selected disabled>select Event</option>
                                         @foreach($events as $event)
-                                            <option value="{{$event->id}}">{{$event->year}}</option>
+                                            <option value="{{$event->id}}">{{$event->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-                            
+
 
                             <button class="btn btn-md btn-primary" type="submit" style="float: right">
                                 <i class="fa fa-dot-circle-o"></i> Submit

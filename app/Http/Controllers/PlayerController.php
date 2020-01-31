@@ -18,7 +18,8 @@ class PlayerController extends Controller
     public function index()
     {
         $players = Player::all();
-        return view('Admin.Players.index',compact('players'));
+        $teams = Team::all();
+        return view('Admin.Players.index',compact('players', 'teams'));
     }
 
     /**
@@ -50,7 +51,7 @@ class PlayerController extends Controller
 
             return redirect::route('player.index')->with('message', 'Player Added');
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -90,7 +91,7 @@ class PlayerController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Player  $player
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Player $player)
     {

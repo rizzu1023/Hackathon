@@ -21,25 +21,25 @@
                     <i class="nav-icon icon-drop"></i> Schedule</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-drop"></i> Testimonials</a>
+                <a class="nav-link" href="/admin/player">
+                    <i class="nav-icon icon-drop"></i> Players</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-pencil"></i> Contacts</a>
+                <a class="nav-link" href="/admin/coordinator">
+                    <i class="nav-icon icon-pencil"></i> Coordinator</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-pencil"></i> Members</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-pencil"></i> Feedback</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-pencil"></i> Recruitment</a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="#">--}}
+{{--                    <i class="nav-icon icon-pencil"></i> Members</a>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="#">--}}
+{{--                    <i class="nav-icon icon-pencil"></i> Feedback</a>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="#">--}}
+{{--                    <i class="nav-icon icon-pencil"></i> Recruitment</a>--}}
+{{--            </li>--}}
         </ul>
     </nav>
 </div>

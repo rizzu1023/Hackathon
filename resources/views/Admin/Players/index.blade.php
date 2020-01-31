@@ -13,16 +13,8 @@
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i>Players
-                        <a class="btn btn-sm btn-primary" href="/admin/player/create" style="float: right">Add Team</a>
-                        <div class="col-md-3" style="display: inline-block; float: right">
-                            <form method="post" action="/admin/player/filter" onchange="submit()">
-                                @csrf
-                            <select class="form-control" id="event" name="event_id">
-                                <option selected disabled>ALL</option>
+                        <a class="btn btn-sm btn-primary" href="/admin/player/create" style="float: right">Add Player</a>
 
-                            </select>
-                            </form>
-                        </div>
                     </div>
                     <div class="card-body">
                         <table class="table table-responsive-sm table-bordered">
@@ -31,7 +23,9 @@
                                 <th>ID</th>
                                 <th>Player Name</th>
                                 <th>Mobile_no</th>
-                                <th>Team_id</th>
+                                <th>Team </th>
+                                <th>Event</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,11 +34,12 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $player->name }}</td>
                                     <td>{{ $player->mobile_no }}</td>
-                                    <td>{{ $player->team_id }}</td>
+                                    <td>{{ $player->Team->year }}-{{ $player->Team->department }}</td>
+                                    <td>{{ $player->Event->name }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-square btn-primary" href="/admin/player/{{ $team->id }}">Detail</a>
-                                        <a class="btn btn-sm btn-square btn-warning"
-                                           href="/admin/player/{{ $player->id }}/edit">Edit</a>
+{{--                                        <a class="btn btn-sm btn-square btn-primary" href="/admin/player/{{ $player->id }}">Detail</a>--}}
+{{--                                        <a class="btn btn-sm btn-square btn-warning"--}}
+{{--                                           href="/admin/player/{{ $player->id }}/edit">Edit</a>--}}
                                         <form method="post" action="/admin/player/{{$player->id}}"
                                               style="display: inline-block">
                                             @csrf

@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d3e666a2-9451-48ea-9e33-9f66d586a2ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_31_131437_create_schedules_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_31_131437_create_schedules_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Schedule/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Schedule/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Schedule/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Schedule/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Coordinator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Coordinator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CoordinatorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CoordinatorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Player.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Coordinator/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Coordinator/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Players/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Players/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Players/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Players/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/layouts/eventTopbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/layouts/eventTopbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/layouts/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +177,7 @@
       <updated>1580396576683</updated>
       <workItem from="1580396578230" duration="1257000" />
       <workItem from="1580397983426" duration="52000" />
-      <workItem from="1580475556559" duration="8378000" />
+      <workItem from="1580475556559" duration="9438000" />
     </task>
     <servers />
   </component>
