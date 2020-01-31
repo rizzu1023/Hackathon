@@ -18,6 +18,7 @@ class CreateCoordinatorsTable extends Migration
             $table->string('name');
             $table->bigInteger('number');
             $table->string('Category');
+            $table->integer('event_id');
             $table->timestamps();
         });
     }
