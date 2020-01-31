@@ -11,186 +11,47 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Add Team
+                        Add Player
                     </div>
                     <div class="card-body">
-                        <form class="form-horizontal" method="post" action="{{ route('team.store') }}"
+                        <form class="form-horizontal" method="post" action="{{ route('player.store') }}"
                               enctype="multipart/form-data" id="teamCreateForm">
                             @csrf
 
                             <div class="form-group row">
-                                <label class="col-md-2 col-form-label" for="title">Team Name</label>
+                                <label class="col-md-2 col-form-label" for="title">Name</label>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="title" type="text" name="team_name"
+                                    <input class="form-control" id="title" type="text" name="name"
                                            placeholder="e.g WANC">
                                 </div>
-                                <label class="col-md-2 col-form-label" for="tagline">State</label>
+                                <label class="col-md-2 col-form-label" for="tagline">Mobile No</label>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="tagline" type="text" name="team_state"
+                                    <input class="form-control" id="tagline" type="text" name="mobile_no"
                                            placeholder="e.g Maharastra">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-2 col-form-label" for="tagline">Member</label>
+                                <label class="col-md-2 col-form-label" for="duration">Team</label>
                                 <div class="col-md-3">
-                                    <select class="form-control" id="member" name="member">
-                                        <option selected value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
+                                    <select class="form-control" id="duration" name="team_id">
+                                        <option selected disabled>select Team</option>
+                                        @foreach($teams as $team)
+                                            <option value="{{$team->id}}">{{$team->year}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
+
                                 <label class="col-md-2 col-form-label" for="duration">Event</label>
                                 <div class="col-md-3">
                                     <select class="form-control" id="duration" name="event_id">
-                                        <option selected disabled>select event</option>
+                                        <option selected disabled>select Event</option>
                                         @foreach($events as $event)
-                                            <option value="{{$event->id}}">{{$event->title}}</option>
+                                            <option value="{{$event->id}}">{{$event->year}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-                            <div id="participant1">
-                                <label>Participant 1</label>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label" for="name1">Name</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="name1" type="text" name="name1"
-                                               placeholder="Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="email1">Email</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="email1" type="text" name="email1"
-                                               placeholder="Email">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="mobile_no1">Mobile Number</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="mobile_no1" type="text" name="mobile_no1"
-                                               placeholder="Mobile Number">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="college1">College</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="college1" type="text" name="college1"
-                                               placeholder="College Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="department">Department</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="department1" type="text" name="department1"
-                                               placeholder="Department">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="github1">Github</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="github1" type="text" name="github1"
-                                               placeholder="username">
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="participant2">
-                                <label>Participant 2</label>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label" for="name2">Name</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="name2" type="text" name="name2"
-                                               placeholder="Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="email2">Email</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="email2" type="text" name="email2"
-                                               placeholder="Email">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="mobile_no2">Mobile Number</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="mobile_no2" type="text" name="mobile_no2"
-                                               placeholder="Mobile Number">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="college2">College</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="college2" type="text" name="college2"
-                                               placeholder="College Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="department2">Department</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="department2" type="text" name="department2"
-                                               placeholder="Department">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="github2">Github</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="github2" type="text" name="github2"
-                                               placeholder="username">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="participant3" style="display: none">
-                                <label>Participant 3</label>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label" for="name3">Name</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="name3" type="text" name="name3"
-                                               placeholder="Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="email3">Email</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="email3" type="text" name="email3"
-                                               placeholder="Email">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="mobile_no3">Mobile Number</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="mobile_no3" type="text" name="mobile_no3"
-                                               placeholder="Mobile Number">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="college3">College</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="college3" type="text" name="college3"
-                                               placeholder="College Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="department3">Department</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="department3" type="text" name="department3"
-                                               placeholder="Department">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="github3">Github</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="github3" type="text" name="github3"
-                                               placeholder="username">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="participant4" style="display: none">
-                                <label>Participant 4</label>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label" for="name4">Name</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="name4" type="text" name="name4"
-                                               placeholder="Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="email4">Email</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="email4" type="text" name="email4"
-                                               placeholder="Email">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="mobile_no4">Mobile Number</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="mobile_no4" type="text" name="mobile_no4"
-                                               placeholder="Mobile Number">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="college4">College</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="college4" type="text" name="college4"
-                                               placeholder="College Name">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="department4">Department</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="department4" type="text" name="department4"
-                                               placeholder="Department">
-                                    </div>
-                                    <label class="col-md-2 col-form-label" for="github4">Github</label>
-                                    <div class="col-md-2">
-                                        <input class="form-control" id="github4" type="fees" name="github4"
-                                               placeholder="username">
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                             <button class="btn btn-md btn-primary" type="submit" style="float: right">
                                 <i class="fa fa-dot-circle-o"></i> Submit
@@ -208,7 +69,7 @@
 @endsection
 
 
-@section('js')
+{{-- @section('js')
     <script>
         $(document).ready(function () {
             $('#member').on('change', function () {
@@ -388,4 +249,4 @@
                 }
             });
     </script>
-@endsection
+@endsection --}}

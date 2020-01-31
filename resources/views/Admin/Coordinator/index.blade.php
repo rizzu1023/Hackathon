@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i>Coordinators
-                        <a class="btn btn-sm btn-primary" href="/admin/coordinator/create" style="float: right">Add Team</a>
+                        <a class="btn btn-sm btn-primary" href="/admin/coordinator/create" style="float: right">Add Coordinator</a>
                         <div class="col-md-3" style="display: inline-block; float: right">
                             <form method="post" action="/admin/coordinator/filter" onchange="submit()">
                                 @csrf

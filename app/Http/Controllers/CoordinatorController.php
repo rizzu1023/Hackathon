@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Coordinator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Event;
 
 class CoordinatorController extends Controller
 {
@@ -26,7 +27,8 @@ class CoordinatorController extends Controller
      */
     public function create()
     {
-        return view('Admin.Coordinator.create');
+        $events = Event::all();
+        return view('Admin.Coordinator.create',compact('events'));
     }
 
     /**

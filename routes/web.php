@@ -19,5 +19,6 @@ Route::prefix('admin')->group(function(){
     Route::resource('/event','EventController');
     Route::resource('/schedule','ScheduleController');
     Route::resource('/coordinator','CoordinatorController');
+    Route::resource('/player','PlayerController');
 
 });

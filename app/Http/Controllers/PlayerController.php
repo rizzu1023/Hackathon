@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Player;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Team;
+use App\Event;
 
 class PlayerController extends Controller
 {
@@ -26,7 +28,9 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        return view('Admin.Players.create');
+        $teams = Team::all();
+        $events = Event::all();
+        return view('Admin.Players.create',compact('teams'),compact('events'));
     }
 
     /**
