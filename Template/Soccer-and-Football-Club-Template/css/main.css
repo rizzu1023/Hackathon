@@ -1376,9 +1376,9 @@ address { font-style: italic; }
 .tg-navigation{
 	width:100%;
 	float:left;
-	padding:0;
+	padding:20px;
 	text-transform:uppercase;
-	font:16px/16px'Oswald', Arial, Helvetica, sans-serif;
+	font:32px/32px'Oswald', Arial, Helvetica, sans-serif;
 }
 .tg-navigation .tg-colhalf{
 	position:relative;
@@ -4775,4 +4775,12 @@ div.system-loader-wrap{top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-in
 }
 @keyframes sk-bouncedelay{0%, 80%, 100%{-webkit-transform:scale(0);transform:scale(0);}
 40%{-webkit-transform:scale(1.0);transform:scale(1.0);}
+}
+
+
+
+
+.datee
+{
+	color: #fff;
 }
