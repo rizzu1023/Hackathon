@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use App\Schedule;
+use App\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -26,27 +28,28 @@ class ScheduleController extends Controller
      */
     public function create()
     {
-        return view('Admin.Schedule.create');
+        $events = Event::all();
+        $teams = Team::all();
+        return view('Admin.Schedule.create',compact('teams','events'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
         Schedule::Create([
-            'date' => $request->date,
-            'time' => $request->time,
+            'dates' => $request->dates,
+            'times' => $request->times,
             'event_id' => $request->event_id,
             'team1_id' => $request->team1_id,
             'team2_id' => $request->team2_id,
-            'status' => $request->status,
             'winner' => $request->winner,
     ]);
-        return redirect::route('Schedule.index')->with('message', 'Schedule Added');
+        return redirect::route('schedule.index')->with('message', 'Schedule Added');
     }
 
     /**
@@ -87,7 +90,7 @@ class ScheduleController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Schedule  $schedule
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Schedule $schedule)
     {

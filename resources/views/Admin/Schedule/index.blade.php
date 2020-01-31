@@ -13,16 +13,8 @@
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i>Teams
-                        <a class="btn btn-sm btn-primary" href="/admin/schedule/create" style="float: right">Add Team</a>
-                        <div class="col-md-3" style="display: inline-block; float: right">
-                            <form method="post" action="/admin/schedule/filter" onchange="submit()">
-                                @csrf
-                            <select class="form-control" id="event" name="event_id">
-                                <option selected disabled>ALL</option>
+                        <a class="btn btn-sm btn-primary" href="/admin/schedule/create" style="float: right">Add Schedele</a>
 
-                            </select>
-                            </form>
-                        </div>
                     </div>
                     <div class="card-body">
                         <table class="table table-responsive-sm table-bordered">
@@ -31,29 +23,30 @@
                                 <th>ID</th>
                                 <th>Date</th>
                                 <th>Time</th>
-                                <th>Event Id</th>
+                                <th>Event</th>
                                 <th>Team 1</th>
                                 <th>Team 2</th>
                                 <th>Status</th>
                                 <th>Winner</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($schedules as $schedule)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $schedule->date }}</td>
-                                    <td>{{ $schedule->time }}</td>
-                                    <td>{{ $schedule->event_id }}</td>
-                                    <td>{{ $schedule->team1_id }}</td>
-                                    <td>{{ $schedule->team2_id }}</td>
+                                    <td>{{ $schedule->dates }}</td>
+                                    <td>{{ $schedule->times }}</td>
+                                    <td>{{ $schedule->Event->name }}</td>
+                                    <td>{{ $schedule->Team1->year}}-{{ $schedule->Team1->department}}</td>
+                                    <td>{{ $schedule->Team2->year}}-{{ $schedule->Team2->department}}</td>
                                     <td>{{ $schedule->status }}</td>
                                     <td>{{ $schedule->winner }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-square btn-primary" href="/admin/schedule/{{ $team->id }}">Detail</a>
+                                        <a class="btn btn-sm btn-square btn-primary" href="/admin/schedule/{{ $schedule->id }}">Detail</a>
                                         <a class="btn btn-sm btn-square btn-warning"
-                                           href="/admin/schedule/{{ $team->id }}/edit">Edit</a>
-                                        <form method="post" action="/admin/schedule/{{$team->id}}"
+                                           href="/admin/schedule/{{ $schedule->id }}/edit">Edit</a>
+                                        <form method="post" action="/admin/schedule/{{$schedule->id}}"
                                               style="display: inline-block">
                                             @csrf
                                             @method('DELETE')

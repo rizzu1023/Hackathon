@@ -19,9 +19,9 @@ class CreateSchedulesTable extends Migration
             $table->time('times');
             $table->integer('team1_id');
             $table->integer('team2_id');
-            $table->string('status');
-            $table->integer('team_id');
+            $table->string('status')->default(1);
             $table->integer('event_id');
+            $table->integer('winner')->nullable();
             $table->timestamps();
         });
     }
