@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Players;
+use App\Player;
 use Faker\Generator as Faker;
 
-$factory->define(Players::class, function (Faker $faker) {
+$factory->define(Player::class, function (Faker $faker) {
     return [
         //
     ];
