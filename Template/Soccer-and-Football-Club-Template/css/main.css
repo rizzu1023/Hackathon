@@ -4466,8 +4466,10 @@ blockquote q{
 	background:#373542;
 }
 .masonry-grid {
-	width:335px;
+	margin-bottom: 50px;
+	width:1000px;
 	float: left;
+	margin-left: 18%;
 	padding: 0;
 }
 .tg-project {
